@@ -16,7 +16,8 @@ export default class Header extends React.Component {
         <TextInput
             placeholder="Task to add.."
             style={styles.text}
-            onChangeText={this.props.addTask}
+            onChangeText={this.props.addText}
+            onSubmitEditing={this.props.addTask}
             value = {this.props.data}
         />
       </View>

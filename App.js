@@ -7,15 +7,21 @@ export default class App extends React.Component {
   constructor(){
     super();
     this.state = { 
-      task: [],
+      tasks: [],
       text: ''
     }
+  }
+
+  addText = (text) => {
+    this.setState({
+      text: text
+    })
   }
 
   saveTask = (task) => {
     console.log(task);
     this.setState({
-      task: [...this.state.task,task],
+      tasks: [...this.state.tasks,task],
       text: '',
     });
   }
@@ -26,8 +32,10 @@ export default class App extends React.Component {
         <Header 
           addTask = {this.saveTask}
           data = {this.state.text}
+          addText = {this.addText}
         />
-        
+        <Text>{this.state.text}</Text>
+        {/*<Text>{this.state.tasks}</Text>*/}
         <Body/>
       </View>
     );
