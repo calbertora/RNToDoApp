@@ -18,10 +18,9 @@ export default class App extends React.Component {
     })
   }
 
-  saveTask = (task) => {
-    console.log(task);
+  saveTask = () => {
     this.setState({
-      tasks: [...this.state.tasks,task],
+      tasks: [...this.state.tasks,{key:Date.now().toString(), text: this.state.text}],
       text: '',
     });
   }
@@ -34,9 +33,9 @@ export default class App extends React.Component {
           data = {this.state.text}
           addText = {this.addText}
         />
-        <Text>{this.state.text}</Text>
-        {/*<Text>{this.state.tasks}</Text>*/}
-        <Body/>
+        <Body
+          data = {this.state.tasks}
+        />
       </View>
     );
   }
