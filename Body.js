@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View,FlatList } from 'react-native';
+import Task from './Task';
 
 export default class Body extends React.Component {
   constructor(){
@@ -14,11 +15,9 @@ export default class Body extends React.Component {
         <Text>Body</Text>
         <FlatList
           data={this.props.data}
-          renderItem = { ({item}) => {
-            console.log(item);
-            return <Text>{item.text}</Text>;
-          }}  
+          renderItem = { ({item}) => <Task item={item}/> }  
         />
+        
       </View>
     );
   }

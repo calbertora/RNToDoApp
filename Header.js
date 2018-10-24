@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   text: {
-      padding: 16
+      padding: 16,
+      fontSize: 24
   }
 });
