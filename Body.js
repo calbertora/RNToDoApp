@@ -12,10 +12,9 @@ export default class Body extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Body</Text>
         <FlatList
           data={this.props.data}
-          renderItem = { ({item}) => <Task item={item}/> }  
+          renderItem = { ({item}) => <Task item={item} delTask = {this.props.delTask}/> }  
         />
         
       </View>
@@ -27,7 +26,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 6,
     backgroundColor: '#eed484',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

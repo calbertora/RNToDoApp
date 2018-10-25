@@ -12,7 +12,6 @@ export default class Header extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Header</Text>
         <TextInput
             placeholder="Task to add.."
             style={styles.text}

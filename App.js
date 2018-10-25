@@ -25,6 +25,16 @@ export default class App extends React.Component {
     });
   }
 
+  deleteTask = (taskID) =>{
+    const tasksTMP = this.state.tasks.filter((task) =>{
+      return task.key !== taskID;
+    });
+
+    this.setState({
+      tasks: tasksTMP
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -35,6 +45,7 @@ export default class App extends React.Component {
         />
         <Body
           data = {this.state.tasks}
+          delTask = {this.deleteTask}
         />
       </View>
     );
