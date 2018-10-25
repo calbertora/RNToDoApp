@@ -8,7 +8,7 @@ export default class Task extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>{this.props.item.text}</Text>
-        <TouchableOpacity onPress={() =>this.props.delTask(this.props.item.key)}>
+        <TouchableOpacity onPress={() => {this.props.delTask(this.props.item.key);}}>
             <Ionicons name="ios-remove-circle" size={24} color="red" />
         </TouchableOpacity>
                 
